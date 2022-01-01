@@ -34,7 +34,10 @@
 span>i {
     color: var(--yellow-green);
 }
-
+.description {
+    font-weight: 100;
+    font-size: 1.1rem;
+}
 .taco-cat-button {
     background-color: var(--white) !important;
     color: var(--dark-color) !important;
