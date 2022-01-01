@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by TJ Longshore</title>
+    <title>TACOƆAT: A Coding Project by TJ Longshore</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,6 +19,11 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
@@ -31,8 +36,8 @@
     <!-- Navbar Section -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/TL_Shadow_Circle_Dark.png"
-                    class="d-inline-block align-text-top me-2" width="30">App Name</a>
+            <a class="navbar-brand taco-cat-font" href="#"><img src="img/TacoCat_NoLogo.png"
+                    class="d-inline-block align-text-top me-2" width="30">TACOƆAT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,7 +54,7 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">Git Repo</a>
+                        <a class="nav-link" href="https://github.com/tj-longshore/TacoCat" target="_blank">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://tj-longshore-portfolio.netlify.app/" target="_blank">About</a>
@@ -62,22 +67,95 @@
     <!-- Main Section -->
     <main class="flex-shrink-0 py-5">
         <div class="container-fluid py-5 px-5">
-            <h2 class="border-1 border-bottom border-dark">The Code</h2>
+            <h2 class="border-1 border-bottom border-dark taco-cat-font">The Code</h2>
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col-md-8">
                     <pre class="line-numbers">
+                        <!-- Code Goes Here -->
                         <code class="language-javascript">
-                            //Call Hello World
-                            function HelloWorld(){
-                                alert("Hello World");
+                            //controller function
+                            function getString() {
+                                document.getElementById("alert").classList.add("invisible");
+                                document.getElementById("alert").classList.remove("msg-true","msg-false", "msg-error")
+                            
+                                let originalString = document.getElementById("originalString").value;
+                            
+                                let palindromeString = palindrome(originalString);
+                            
+                                displayString(palindromeString);
+                            }
+                            
+                            //logic function
+                            function palindrome(originalString) {
+                                let remove = /[\^\W_]/g;    
+                                let lowerStr = originalString.toLowerCase().replace(remove,"");
+                                let reverseStr = lowerStr.split("").reverse().join("");
+                                if (reverseStr === lowerStr && reverseStr !== ""){
+                                    palindromeHeaderMsg = "It's a palindrome!";
+                                    palindromeMsg = "Your string reversed is:"
+                                    document.getElementById("alert").classList.add("msg-true");
+                                } else if (reverseStr === "") {
+                                    palindromeHeaderMsg = "Well you didn't enter anything.";
+                                    palindromeMsg = "¯\\_(ツ)_/¯"
+                                    document.getElementById("alert").classList.add("msg-error");
+                                }else {
+                                    palindromeHeaderMsg = "It's not a palindrome :(";
+                                    palindromeMsg = "Your string reversed is:";
+                                    document.getElementById("alert").classList.add("msg-false");
+                                }
+                            
+                                return reverseStr;
+                            }
+                            
+                            
+                            //display function
+                            function displayString(reverseStr){
+                                //display header message
+                                document.getElementById("msgHeader").innerHTML = `${palindromeHeaderMsg}`
+                                //display message
+                                document.getElementById("msg").innerHTML = `${palindromeMsg} ${reverseStr}`;
+                            
+                                //show alert box
+                                document.getElementById("alert").classList.remove("invisible");
                             }
                         </code>
                     </pre>
                 </div>
-                <div class="col-md-4">
-                    <p> The Code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of, "Hello World"</p>
+                <div class="col-md-4 pb-5">
+                    <!-- Code Intro -->
+                    <p>The code for tacocat is made up of three main functions:
+                        <span class="taco-cat-font taco-cat-green">getString</span>,
+                        <span class="taco-cat-font taco-cat-red">palindrome</span> and
+                        <span class="taco-cat-font taco-cat-blue">displayString</span>.
+                    </p>
+                    <!-- getString -->
+                    <h5 class="taco-cat-font taco-cat-green border-bottom border-2 pb-2">getString</h5>
+                    <p>The function <span class="taco-cat-font taco-cat-green">getString</span> is the controller
+                        function.
+                        <br class="mb-3">
+                        The function first edits the alert box by adding the class of "invisible" and removing the alert box background format classes "msg-true", "msg-false" and "msg-error".
+                        <br class="mb-3">
+                        It then sets the variable originalString to the value of the user input string.
+                        <br class="mb-3">
+                        The logic function <span class="taco-cat-font taco-cat-red">palindrome</span> is then executed and the results are then displayed to the screen using the display function <span class="taco-cat-font taco-cat-blue">displayString</span>.
+                    </p>
+                    <h5 class="taco-cat-font taco-cat-red border-bottom border-2 pb-2">palindrome</h5>
+                    <p>The function <span class="taco-cat-font taco-cat-red">palindrome</span> is the logic function.
+                        <br class="mb-3">
+                        This function uses a regular expression variable to remove all non-letters from the string.
+                        <br class="mb-3">
+                        The variable of lowerStr is set to equal the value of the user input string. However, it uses .toLowerCase() to set all of the letters to lowercase. It then uses the .replace() method and the regular expression variable to change all non letter items to an empty string.
+                        <br class="mb-3">
+                        The variable reverseStr then takes the value of lowerStr and splits the string at every index into an array. The .reverse() method then reverses the array. The .join() method is used to re-join every string value within the array into a single string of letters.
+                        <br class="mb-3">
+                        Using an if-else statement, we first check to see if reverseStr is equal to lowerStr and if the value is not empty. It then adds an appropriate message for all of the cases that are respectively displayed to the page with CSS styling.
+                    </p>
+                    <h5 class="taco-cat-font taco-cat-blue border-bottom border-2 pb-2">displayString</h5>
+                    <p>
+                        The function <span class="taco-cat-font taco-cat-blue">displayString</span> is the display function.
+                        <br class="mb-3">
+                        The values are displayed via DOM manipulation and template literals which display the values of the variables palindromeMsg and reverseStr.
+                    </p>
                 </div>
             </div>
         </div>
@@ -89,7 +167,7 @@
             <div class="row row-cols-1 row-cols-md-3 d-flex align-items-center gy-2">
                 <div class="col order-last order-md-first d-flex text-light justify-content-start">
                     <div>
-                        <span class="text-muted">&copy;2021</span>
+                        <span class="text-light">&copy;2021</span>
                         TJ Longshore
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by TJ Longshore</title>
+    <title>TACOƆAT: A Coding Project by TJ Longshore</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +17,11 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
 
+     <!-- Google Font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
@@ -30,8 +35,8 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/TL_Shadow_Circle_Dark.png"
-                    class="d-inline-block align-text-top me-2" width="30">App Name</a>
+            <a class="navbar-brand taco-cat-font" href="#"><img src="img/TacoCat_NoLogo.png"
+                    class="d-inline-block align-text-top me-2" width="30">TACOƆAT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,7 +53,7 @@
                         <a class="nav-link" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">Git Repo</a>
+                        <a class="nav-link" href="https://github.com/tj-longshore/TacoCathttps://github.com/tj-longshore/TacoCat" target="_blank">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://tj-longshore-portfolio.netlify.app/" target="_blank">About</a>
@@ -61,8 +66,35 @@
     <!-- Main Section -->
 
     <main class="flex-shrink-0 pb-5">
-        <div class="container">
-
+        <div class="container col-xxl-8 mt-5 px-4 py-5">
+            <div class="row border-bottom border-2">
+                <h1 class="display-5 fw-bold taco-cat-font">TACOƆAT</h1>
+                <p>Tacocat is a palindrome. So is, "Yo, banana boy!" Determine if a string is also a palindrome with javascript.</p>
+            </div>
+            <div class="row g-5 py-5 row-cols-1 row-cols-md-2">
+                <div class="col w-100 ps-md-5">
+                    <h3 class="border-bottom border-2">Let's Check If It's A Palindrome</h3>
+                    <form class="row row-cols-1 row-cols-md-2 gy-2 gx-3">
+                        <div class="col w-100">
+                            <label class="form-label">Enter a word, sentence or phrase:</label>
+                            <input id="originalString" class="form-control" placeholder="Tacocat" aria-label="Enter A String">
+                        </div>
+                        <div class="col col-md-12 d-flex justify-content-md-end">
+                            <button type="button" id="btnSubmit" class="btn btn-lg fs-6 taco-cat-button">
+                            ¡TACOƆAT!
+                            </button>
+                        </div>
+                        <div class="alert msg-background w-100 mt-5 invisible fade show" id="alert" role="alert">
+                            <h4 class="alert-heading border-bottom border-2 msg-text" id="msgHeader">
+                                <!-- Header Message Goes Here -->
+                            </h4>
+                            <p class="mb-0 mt-3" id="msg">
+                                <!-- Message Goes Here -->
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <!-- Footer Section -->
@@ -98,6 +130,9 @@
     </script>
     <!-- Custom JS -->
     <script src="js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click",getString);
+    </script>
 </body>
 
 </html>

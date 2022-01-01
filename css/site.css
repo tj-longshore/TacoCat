@@ -1,19 +1,72 @@
 :root {
-    --yellow-primary: #f1ca6e;
-    --yellow-secondary: #FFDD8F;
-    --blue-primary: #2B51A6;
-    --blue-secondary: #6F98F2;
-    --brown: #A6863C;
-    --dark-color: #292929;
-    --white: #f8f9fa;
+    --celadon-blue: #1e6685;
+    --green-cyan: #007F5Dff;
+    --yellow-green: #8bc53fff;
+    --upsdell-red: #be1e2d;
+    --medium-candy-apple-red: #db162fff;
+    --spanish-orange: #e36414ff;
+    --lemon-glacier: #fbff12ff;
+    --maximum-yellow-red: #ffc966;
+    --dark-color: #212227;
+    --white: #ffffff;
 }
 
-body {
-    color: var(--dark-color);
+/* TacoCat Specific CSS */
+
+.taco-cat-font {
+    font-family: 'Arimo', sans-serif;
+}
+
+.taco-cat-green {
+    color: var(--green-cyan);
+}
+.taco-cat-red {
+    color: var(--upsdell-red);
+}
+.taco-cat-blue {
+    color: var(--celadon-blue);
+}
+
+.nav-link:hover {
+    color: var(--lemon-glacier) !important;
+}
+
+span>i {
+    color: var(--yellow-green);
+}
+
+.taco-cat-button {
+    background-color: var(--white) !important;
+    color: var(--dark-color) !important;
+    border: solid .2rem var(--spanish-orange) !important;
+}
+.taco-cat-button:hover {
+    background-color: var(--celadon-blue) !important;
+    color: var(--white) !important;
+    border: solid .2rem var(--dark-color) !important;
 }
 
 nav, footer {
-    background-color: var(--dark-color);
+    background-color: var(--upsdell-red);
+}
+
+.msg-true {
+    background-color: var(--green-cyan) !important;
+    color: var(--white) !important;
+}
+
+.msg-false {
+    background-color: var(--upsdell-red) !important;
+    color: var(--white) !important;
+}
+.msg-error {
+    background-color: var(--maximum-yellow-red) !important;
+    color: var(--white) !important
+}
+/* General CSS */
+
+body {
+    color: var(--dark-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,17 +85,13 @@ main>.container {
     width: 100%;
 }
 
-span>i {
-    color: var(--yellow-primary)
-}
-
 
 footer .social>a {
     color: var(--white);
 }
 
 footer .social>a:hover {
-    color: var(--blue-secondary);
+    color: var(--lemon-glacier);
 }
 
 .js-icon {
@@ -53,15 +102,16 @@ footer .social>a:hover {
     background: #DA22FF;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #8a83f2, #6f10f4);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #8a83f2, #6f10f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
 
 .html5-icon {
     background: #e34c26;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #e34c26, #f06529);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #e34c26, #f06529); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -70,6 +120,7 @@ footer .social>a:hover {
     background: #e34c26;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #264de4, #2965f1);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #264de4, #2965f1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
